@@ -1,4 +1,6 @@
 # videos and GIFs
+videos/
+plots/
 *.mp4
 *.avi
 *.gif
