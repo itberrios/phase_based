@@ -1,3 +1,8 @@
+# videos and GIFs
+*.mp4
+*.avi
+*.gif
+
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]
