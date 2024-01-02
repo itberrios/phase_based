@@ -1,7 +1,7 @@
 # phase_based
 PyTorch implementation of [Phase Based Motion Magnification](http://people.csail.mit.edu/nwadhwa/phase-video/phase-video.pdf). It is based off of MATLAB source that can be found [here](http://people.csail.mit.edu/nwadhwa/phase-video/), the input videos can also be found at this location. The PyTorch implementation is much faster than a numpy implementation even without a GPU.
 
-The main notebook contains a detailed hands-on overview of the Motion Magnification Algorithm. The main script is called motion_magnification.py and
+The [main notebook](https://github.com/itberrios/phase_based/blob/main/motion_amplification_pytorch.ipynb) contains a detailed hands-on overview of the Motion Magnification Algorithm. The main script is called motion_magnification.py and
 can be called from the commandline. Or alternatively the arguments can be input directly in the script.
 
 ## Applying Motion Magnification
