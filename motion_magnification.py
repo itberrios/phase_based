@@ -1,5 +1,5 @@
 """
-PyTorch implementation of Phase Based Motion Amplification
+PyTorch implementation of Phase Based Motion Magnification
 
 Current approach loads all frames into memory so this won't work for large videos
 This is just a demo.
@@ -28,6 +28,7 @@ TODO: ensure selected Batch Size is compatible with the number of filters
 
 import os
 import sys
+import datetime
 import re
 import argparse
 import numpy as np
@@ -99,23 +100,28 @@ ap.add_argument("-gif", "--save_gif", type=bool, default=False,
 
 if __name__ == '__main__':
 
-    ## Optional: Pass arguments here
-    args = vars(ap.parse_args(
-        ["--video_path",       "videos/guitar.avi", # "videos/eye.avi", # "videos/crane_crop.avi", 
-         "--phase_mag",        "25.0", # "25.0", 
-         "--freq_lo",          "72", # "30", # "0.20", 
-         "--freq_hi",          "92", # "50", # "0.25", 
-         "--colorspace",       "luma3",
-         "--pyramid_type",     "smooth_quarter_octave", # "half_octave",
-         "--sigma",            "2.0", # "5.0"
-         "--attenuate",        "True", # "False",
-         "--sample_frequency", "600", # "500", # "-1.0", # This is generally not needed
-         "--reference_index",  "0",
-         "--scale_factor",     "0.75", # "1.0"
-         "--batch_size",       "4",
-         "--save_directory",   "",
-         "--save_gif",         "True"
-         ]))
+    ## Default use commandline args 
+    ## --> Comment this out to manually input args in script
+    args = vars(ap.parse_args())
+
+    ## Optional: Pass arguments directly in script
+    ## --> Comment this out to receive args from commandline
+    # args = vars(ap.parse_args(
+    #     ["--video_path",       "videos/guitar.avi", # "videos/eye.avi", # "videos/crane_crop.avi", 
+    #      "--phase_mag",        "25.0", # "25.0", 
+    #      "--freq_lo",          "72", # "30", # "0.20", 
+    #      "--freq_hi",          "92", # "50", # "0.25", 
+    #      "--colorspace",       "luma3",
+    #      "--pyramid_type",     "half_octave",
+    #      "--sigma",            "2.0", # "5.0"
+    #      "--attenuate",        "True", # "False",
+    #      "--sample_frequency", "600", # "500", # "-1.0", # This is generally not needed
+    #      "--reference_index",  "0",
+    #      "--scale_factor",     "0.75", # "1.0"
+    #      "--batch_size",       "4",
+    #      "--save_directory",   "",
+    #      "--save_gif",         "True"
+    #      ]))
     
     ## Parse Args   
     video_path       = args["video_path"]
@@ -133,6 +139,9 @@ if __name__ == '__main__':
     save_directory   = args["save_directory"]
     save_gif         = args["save_gif"]
 
+    ## ======================================================================================
+    ## start the clock once the args are received
+    tic = cv2.getTickCount()
 
     ## ======================================================================================
     ## Process input filepaths
@@ -153,6 +162,7 @@ if __name__ == '__main__':
 
     print(f"\nProcessing {video_name} " \
           f"and saving results to {video_save_path} \n")
+    print(f"Device found: {DEVICE} \n")
 
     ## ======================================================================================
     ## Get frames and sample rate (fs) from input video
@@ -262,7 +272,7 @@ if __name__ == '__main__':
                                                   .to(DEVICE)
 
     ## ======================================================================================
-    ## Begin Motion Amplification processing
+    ## Begin Motion Magnification processing
 
     print(f"Performing Phase Based Motion Magnification \n")
 
@@ -343,7 +353,7 @@ if __name__ == '__main__':
     out.release()
     del out
 
-    print(f"result video saved to: {video_save_path} \n")
+    print(f"Result video saved to: {video_save_path} \n")
 
     ## ======================================================================================
     ## make GIF if desired
@@ -375,6 +385,11 @@ if __name__ == '__main__':
     ## ======================================================================================
     ## end of processing
         
-    print("Motion Amplification processing complete! \n")
+    # get time elapsed in Hours : Minutes : Seconds
+    toc = cv2.getTickCount()
+    time_elapsed = (toc - tic) / cv2.getTickFrequency()
+    time_elapsed = str(datetime.timedelta(seconds=time_elapsed))
 
+    print("Motion Magnification processing complete! \n")
+    print(f"Time Elapsed (HH:MM:SS): {time_elapsed} \n")
     

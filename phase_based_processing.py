@@ -1,5 +1,5 @@
 """
-Phase Based Amplification Processing
+Phase Based Magnification Processing
 
 """
 
@@ -28,7 +28,7 @@ class PhaseBased():
                     (use 0 for no blurring)
             transfer_function - Frequency Domain Bandpass Filter 
                                 Transfer Function (array)
-            phase_mag - Phase Amplification factor
+            phase_mag - Phase Magnification/Amplification factor
             attenuate - determines whether to attenuate other frequencies
             ref_idx - index of reference frame to compare local phase 
                       changes to (DC frame)
