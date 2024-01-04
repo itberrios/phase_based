@@ -15,18 +15,17 @@ The following commandline arguments produce the following GIF: <br>
 A list of the arguments is provided below. Please use the help option to find more info: 
 ``` python motion_magnification.py --help ```
 
-- --video_path, -v         Path to input video (**Required**)
-- --phase_mag, -a          Phase Magnification Factor (**Required**)
-- --freq_lo, -lo           Low Frequency cutoff for Temporal Filter (**Required**)
-- --freq_hi, -hi           High Frequency cutoff for Temporal Filter (**Required**)
-- --colorspace, -n         Colorspace for processing
-- --pyramid_type, -p       Complex Steerable Pyramid Type
-- --sigma, -s              Gaussian Kernel for Phase Filtering
-- --attenuate, -a          Attenuates Other frequencies outside of lo and hi
-- --sample_frequency, -fs  Overrides video sample frequency
-- --reference_index, -r    Index of DC reference frame
-- --scale_factor, -c       Factor to scale frames for processing
-- --batch_size, -b         CUDA batch size
-- --save_directory, -d     Directory for output files (default is input video directory)  
-- --save_gif, -gif         Saves results as a GIF
-
+- --video_path, -v         **&rarr;** Path to input video (**Required**)
+- --phase_mag, -a          **&rarr;** Phase Magnification Factor (**Required**)
+- --freq_lo, -lo           **&rarr;** Low Frequency cutoff for Temporal Filter (**Required**)
+- --freq_hi, -hi           **&rarr;** High Frequency cutoff for Temporal Filter (**Required**)
+- --colorspace, -n         **&rarr;** Colorspace for processing
+- --pyramid_type, -p       **&rarr;** Complex Steerable Pyramid Type
+- --sigma, -s              **&rarr;** Gaussian Kernel for Phase Filtering
+- --attenuate, -a          **&rarr;** Attenuates Other frequencies outside of lo and hi
+- --sample_frequency, -fs  **&rarr;** Overrides video sample frequency
+- --reference_index, -r    **&rarr;** Index of DC reference frame
+- --scale_factor, -c       **&rarr;** Factor to scale frames for processing
+- --batch_size, -b         **&rarr;** CUDA batch size
+- --save_directory, -d     **&rarr;** Directory for output files (default is input video directory)  
+- --save_gif, -gif         **&rarr;** Saves results as a GIF
