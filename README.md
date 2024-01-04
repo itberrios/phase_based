@@ -7,24 +7,26 @@ can be called from the commandline. Or alternatively the arguments can be input 
 ## Applying Motion Magnification
 
 The following commandline arguments produce the following GIF: <br>
-``` Python motion_magnification.py -v videos/crane_crop.avi -a 25 -lo 0.2 -hi 0.25 -n luma3 -p half_octave -s 5.0 -b 4 -c 0.7 -gif True ``` 
+``` python motion_magnification.py -v videos/crane_crop.avi -a 25 -lo 0.2 -hi 0.25 -n luma3 -p half_octave -s 5.0 -b 4 -c 0.7 -gif True ``` 
 
 ![crane_crop_luma3_25x](https://github.com/itberrios/phase_based/assets/60835780/83cebe8d-eafa-4342-b5c1-2a9cc13ea458)
 
 ### Arguments:
+A list of the arguments is provided below. Please use the help option to find more info: 
+``` python motion_magnification.py --help ```
 
-- "--video_path",       "videos/crane_crop.avi", 
-- "--phase_mag",        "25.0", 
-- "--freq_lo",          "0.20", 
-- "--freq_hi",          "0.25", 
-- "--colorspace",       "luma3",
-- "--pyramid_type",     "half_octave",
-- "--sigma",            "5.0",
-- "--attenuate",        "True", # "False",
-- "--sample_frequency", "-1.0", # This is generally not needed
-- "--reference_index",  "0",
-- "--scale_factor",     "1.0",
-- "--batch_size",       "4",
-- "--save_directory",   "",
-- "--save_gif",         "False"
+- --video_path, -v         Path to input video (**Required**)
+- --phase_mag, -a          Phase Magnification Factor (**Required**)
+- --freq_lo, -lo           Low Frequency cutoff for Temporal Filter (**Required**)
+- --freq_hi, -hi           High Frequency cutoff for Temporal Filter (**Required**)
+- --colorspace, -n         Colorspace for processing
+- --pyramid_type, -p       Complex Steerable Pyramid Type
+- --sigma, -s              Gaussian Kernel for Phase Filtering
+- --attenuate, -a          Attenuates Other frequencies outside of lo and hi
+- --sample_frequency, -fs  Overrides video sample frequency
+- --reference_index, -r    Index of DC reference frame
+- --scale_factor, -c       Factor to scale frames for processing
+- --batch_size, -b         CUDA batch size
+- --save_directory, -d     Directory for output files (default is input video directory)  
+- --save_gif, -gif         Saves results as a GIF
 

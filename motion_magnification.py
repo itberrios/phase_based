@@ -67,7 +67,7 @@ ap.add_argument("-p", "--pyramid_type", type=str, default="half_octave",
              "half_octave", 
              "smooth_half_octave", 
              "smooth_quarter_octave"},
-    help="High Frequency cutoff for Temporal Filter")
+    help="Complex Steerable Pyramid Type")
 
 # Phase Processing Args
 ap.add_argument("-s", "--sigma", type=float, default=0.0,
@@ -119,6 +119,40 @@ if __name__ == '__main__':
     #      "--reference_index",  "0",
     #      "--scale_factor",     "0.75", # "1.0"
     #      "--batch_size",       "4",
+    #      "--save_directory",   "",
+    #      "--save_gif",         "True"
+    #      ]))
+
+    # args = vars(ap.parse_args(
+    #     ["--video_path",       "videos/crane_crop.avi", 
+    #      "--phase_mag",        "25.0", 
+    #      "--freq_lo",          "0.20", 
+    #      "--freq_hi",          "0.25", 
+    #      "--colorspace",       "luma3",
+    #      "--pyramid_type",     "half_octave",
+    #      "--sigma",            "5.0",
+    #      "--attenuate",        "True", # "False",
+    #      "--sample_frequency", "-1.0", # This is generally not needed
+    #      "--reference_index",  "0",
+    #      "--scale_factor",     "1.0",
+    #      "--batch_size",       "4",
+    #      "--save_directory",   "",
+    #      "--save_gif",         "False"
+    #      ]))
+
+    # args = vars(ap.parse_args(
+    #     ["--video_path",       "videos/eye.avi", # "videos/crane_crop.avi", 
+    #      "--phase_mag",        "25.0", # "25.0", 
+    #      "--freq_lo",          "30", # "0.20", 
+    #      "--freq_hi",          "50", # "0.25", 
+    #      "--colorspace",       "luma3",
+    #      "--pyramid_type",     "half_octave",
+    #      "--sigma",            "4.0", # "5.0"
+    #      "--attenuate",        "True", # "False",
+    #      "--sample_frequency", "500", # "-1.0", # This is generally not needed
+    #      "--reference_index",  "0",
+    #      "--scale_factor",     "0.5", # "1.0"
+    #      "--batch_size",       "2",
     #      "--save_directory",   "",
     #      "--save_gif",         "True"
     #      ]))
