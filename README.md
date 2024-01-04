@@ -11,5 +11,20 @@ The following commandline arguments produce the following GIF: <br>
 
 ![crane_crop_luma3_25x](https://github.com/itberrios/phase_based/assets/60835780/83cebe8d-eafa-4342-b5c1-2a9cc13ea458)
 
-### TODO: Add description for all arguments
+### Arguments:
+
+- "--video_path",       "videos/crane_crop.avi", 
+- "--phase_mag",        "25.0", 
+- "--freq_lo",          "0.20", 
+- "--freq_hi",          "0.25", 
+- "--colorspace",       "luma3",
+- "--pyramid_type",     "half_octave",
+- "--sigma",            "5.0",
+- "--attenuate",        "True", # "False",
+- "--sample_frequency", "-1.0", # This is generally not needed
+- "--reference_index",  "0",
+- "--scale_factor",     "1.0",
+- "--batch_size",       "4",
+- "--save_directory",   "",
+- "--save_gif",         "False"
 
