@@ -1,6 +1,9 @@
 """
 Phase Based Magnification Processing
 
+Isaac Berrios
+January 2024
+
 """
 
 import numpy as np

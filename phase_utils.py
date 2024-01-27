@@ -1,6 +1,9 @@
 """
 Utils for Phase Based Video Magnification
 
+Isaac Berrios
+January 2024
+
 """
 import os
 from PIL import Image

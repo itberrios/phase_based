@@ -1,6 +1,9 @@
 """
 PyTorch implementation of Phase Based Motion Magnification
 
+Isaac Berrios
+January 2024
+
 Current approach loads all frames into memory so this won't work for large videos
 This is just a demo.
 
@@ -32,6 +35,7 @@ import datetime
 import re
 import argparse
 import numpy as np
+from PIL import Image
 import cv2
 import torch
 
