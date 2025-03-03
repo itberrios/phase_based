@@ -147,7 +147,7 @@ def create_gif_from_numpy(save_path, images):
 ## Misc utils
 
 def get_fft2_batch(tensor_in):
-    return torch.fft.fftshift(torch.fft.fft2(tensor_in, dim=(1,2))).type(torch.complex64)
+    return torch.fft.fftshift(torch.fft.fft2(tensor_in, dim=(1, 2)), dim=(1, 2)).type(torch.complex64)
 
 
 def bandpass_filter(freq_lo, freq_hi, fs, num_taps, device):
