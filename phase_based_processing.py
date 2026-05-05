@@ -119,8 +119,7 @@ class PhaseBased():
                 _delta = torch.angle(curr_pyr) - ref_phase 
 
                 # get phase delta wrapped to [-pi, pi]
-                phase_deltas[:, vid_idx, :, :] = ((torch.pi + _delta) \
-                                                  % 2*torch.pi) - torch.pi
+                phase_deltas[:, vid_idx, :, :] = ((torch.pi + _delta) % (2*torch.pi)) - torch.pi
                 
             ## Temporally Filter the phase deltas
             # Filter in Frequency Domain and convert back to phase space
